@@ -4,11 +4,13 @@ Task 1  What is HTTP(S)?
 
 What is HTTP? (HyperText Transfer Protocol)
 
-HTTP is what's used whenever you view a website, developed by Tim Berners-Lee and his team between 1989-1991. HTTP is the set of rules used for communicating with web servers for the transmitting of webpage data, whether that is HTML, Images, Videos, etc.
+HTTP is what's used whenever you view a website, developed by Tim Berners-Lee and his team between 1989-1991. HTTP is the set of rules used for communicating with web 
+servers for the transmitting of webpage data, whether that is HTML, Images, Videos, etc.
 
 What is HTTPS? (HyperText Transfer Protocol Secure)
 
-HTTPS is the secure version of HTTP. HTTPS data is encrypted so it not only stops people from seeing the data you are receiving and sending, but it also gives you assurances that you're talking to the correct web server and not something impersonating it.
+HTTPS is the secure version of HTTP. HTTPS data is encrypted so it not only stops people from seeing the data you are receiving and sending, but it also gives you 
+assurances that you're talking to the correct web server and not something impersonating it.
 
 Answer the questions below
 
@@ -23,11 +25,13 @@ THM{INVALID_HTTP_CERT}
 
 Task 2  Requests And Responses
 
-When we access a website, your browser will need to make requests to a web server for assets such as HTML, Images, and download the responses. Before that, you need to tell the browser specifically how and where to access these resources, this is where URLs will help.
+When we access a website, your browser will need to make requests to a web server for assets such as HTML, Images, and download the responses. Before that, you need to
+tell the browser specifically how and where to access these resources, this is where URLs will help.
 
 What is a URL? (Uniform Resource Locator)
 
-If you’ve used the internet, you’ve used a URL before. A URL is predominantly an instruction on how to access a resource on the internet. The below image shows what a URL looks like with all of its features (it does not use all features in every request).
+If you’ve used the internet, you’ve used a URL before. A URL is predominantly an instruction on how to access a resource on the internet. The below image shows what a 
+URL looks like with all of its features (it does not use all features in every request).
 
 https://static-labs.tryhackme.cloud/sites/howhttpworks/newurl.png
 
@@ -41,9 +45,11 @@ Port: The Port that you are going to connect to, usually 80 for HTTP and 443 for
 
 Path: The file name or location of the resource you are trying to access.
 
-Query String: Extra bits of information that can be sent to the requested path. For example, /blog?id=1 would tell the blog path that you wish to receive the blog article with the id of 1.
+Query String: Extra bits of information that can be sent to the requested path. For example, /blog?id=1 would tell the blog path that you wish to receive the blog 
+article with the id of 1.
 
-Fragment: This is a reference to a location on the actual page requested. This is commonly used for pages with long content and can have a certain part of the page directly linked to it, so it is viewable to the user as soon as they access the page.
+Fragment: This is a reference to a location on the actual page requested. This is commonly used for pages with long content and can have a certain part of the page 
+directly linked to it, so it is viewable to the user as soon as they access the page.
 
 Making a Request
 
@@ -51,7 +57,8 @@ It's possible to make a request to a web server with just one line "GET / HTTP/1
 
 https://static-labs.tryhackme.cloud/sites/howhttpworks/line.png
 
-But for a much richer web experience, you’ll need to send other data as well. This other data is sent in what is called headers, where headers contain extra information to give to the web server you’re communicating with, but we’ll go more into this in the Header task.
+But for a much richer web experience, you’ll need to send other data as well. This other data is sent in what is called headers, where headers contain extra 
+information to give to the web server you’re communicating with, but we’ll go more into this in the Header task.
 
 Example Request:
 
@@ -62,7 +69,8 @@ User-Agent: Mozilla/5.0 Firefox/87.0
 Referer: https://tryhackme.com/
 To breakdown each line of this request:
 
-Line 1: This request is sending the GET method ( more on this in the HTTP Methods task ), request the home page with / and telling the web server we are using HTTP protocol version 1.1.
+Line 1: This request is sending the GET method ( more on this in the HTTP Methods task ), request the home page with / and telling the web server we are using HTTP 
+protocol version 1.1.
 
 Line 2: We tell the web server we want the website tryhackme.com
 
@@ -91,7 +99,8 @@ Content-Length: 98
 </html>
 To breakdown each line of the response:
 
-Line 1: HTTP 1.1 is the version of the HTTP protocol the server is using and then followed by the HTTP Status Code in this case "200 Ok" which tells us the request has completed successfully.
+Line 1: HTTP 1.1 is the version of the HTTP protocol the server is using and then followed by the HTTP Status Code in this case "200 Ok" which tells us the request 
+has completed successfully.
 
 Line 2: This tells us the web server software and version number.
 
@@ -115,7 +124,8 @@ Content-Length
 
 Task 3  HTTP Methods
 
-HTTP methods are a way for the client to show their intended action when making an HTTP request. There are a lot of HTTP methods but we'll cover the most common ones, although mostly you'll deal with the GET and POST method.
+HTTP methods are a way for the client to show their intended action when making an HTTP request. There are a lot of HTTP methods but we'll cover the most common ones, 
+although mostly you'll deal with the GET and POST method.
 
 GET Request
 This is used for getting information from a web server.
@@ -147,26 +157,35 @@ Task 4  HTTP Status Codes
 
 HTTP Status Codes:
 
-In the previous task, you learnt that when a HTTP server responds, the first line always contains a status code informing the client of the outcome of their request and also potentially how to handle it. These status codes can be broken down into 5 different ranges:
+In the previous task, you learnt that when a HTTP server responds, the first line always contains a status code informing the client of the outcome of their request 
+and also potentially how to handle it. These status codes can be broken down into 5 different ranges:
 
-100-199 - Information Response	These are sent to tell the client the first part of their request has been accepted and they should continue sending the rest of their request. These codes are no longer very common.
+100-199 - Information Response	These are sent to tell the client the first part of their request has been accepted and they should continue sending the rest of their
+request. These codes are no longer very common.
 200-299 - Success	This range of status codes is used to tell the client their request was successful.
-300-399 - Redirection	These are used to redirect the client's request to another resource. This can be either to a different webpage or a different website altogether.
+300-399 - Redirection	These are used to redirect the client's request to another resource. This can be either to a different webpage or a different website 
+altogether.
 400-499 - Client Errors	Used to inform the client that there was an error with their request.
 500-599 - Server Errors	This is reserved for errors happening on the server-side and usually indicate quite a major problem with the server handling the request.
 
 Common HTTP Status Codes:
 
-There are a lot of different HTTP status codes and that's not including the fact that applications can even define their own, we'll go over the most common HTTP responses you are likely to come across:
+There are a lot of different HTTP status codes and that's not including the fact that applications can even define their own, we'll go over the most common HTTP r
+esponses you are likely to come across:
 
 200 - OK	The request was completed successfully.
 201 - Created	A resource has been created (for example a new user or new blog post).
-301 - Permanent Redirect	This redirects the client's browser to a new webpage or tells search engines that the page has moved somewhere else and to look there instead.
-302 - Temporary Redirect	Similar to the above permanent redirect, but as the name suggests, this is only a temporary change and it may change again in the near future.
-400 - Bad Request	This tells the browser that something was either wrong or missing in their request. This could sometimes be used if the web server resource that is being requested expected a certain parameter that the client didn't send.
-401 - Not Authorised	You are not currently allowed to view this resource until you have authorised with the web application, most commonly with a username and password.
+301 - Permanent Redirect	This redirects the client's browser to a new webpage or tells search engines that the page has moved somewhere else and to look there 
+instead.
+302 - Temporary Redirect	Similar to the above permanent redirect, but as the name suggests, this is only a temporary change and it may change again in the near 
+future.
+400 - Bad Request	This tells the browser that something was either wrong or missing in their request. This could sometimes be used if the web server resource that 
+is being requested expected a certain parameter that the client didn't send.
+401 - Not Authorised	You are not currently allowed to view this resource until you have authorised with the web application, most commonly with a username and 
+password.
 403 - Forbidden	You do not have permission to view this resource whether you are logged in or not.
-405 - Method Not Allowed	The resource does not allow this method request, for example, you send a GET request to the resource /create-account when it was expecting a POST request instead.
+405 - Method Not Allowed	The resource does not allow this method request, for example, you send a GET request to the resource /create-account when it was expecting 
+a POST request instead.
 404 - Page Not Found	The page/resource you requested does not exist.
 500 - Internal Service Error	The server has encountered some kind of error with your request that it doesn't know how to handle properly.
 503 - Service Unavailable	
@@ -198,11 +217,14 @@ Common Request Headers
 
 ﻿These are headers that are sent from the client (usually your browser) to the server.
 
-Host: Some web servers host multiple websites so by providing the host headers you can tell it which one you require, otherwise you'll just receive the default website for the server.
+Host: Some web servers host multiple websites so by providing the host headers you can tell it which one you require, otherwise you'll just receive the default 
+website for the server.
 
-User-Agent: This is your browser software and version number, telling the web server your browser software helps it format the website properly for your browser and also some elements of HTML, JavaScript and CSS are only available in certain browsers.
+User-Agent: This is your browser software and version number, telling the web server your browser software helps it format the website properly for your browser and 
+also some elements of HTML, JavaScript and CSS are only available in certain browsers.
 
-Content-Length: When sending data to a web server such as in a form, the content length tells the web server how much data to expect in the web request. This way the server can ensure it isn't missing any data.
+Content-Length: When sending data to a web server such as in a form, the content length tells the web server how much data to expect in the web request. This way the 
+server can ensure it isn't missing any data.
 
 Accept-Encoding: Tells the web server what types of compression methods the browser supports so the data can be made smaller for transmitting over the internet.
 
@@ -216,7 +238,8 @@ Set-Cookie: Information to store which gets sent back to the web server on each 
 
 Cache-Control: How long to store the content of the response in the browser's cache before it requests it again.
 
-Content-Type: This tells the client what type of data is being returned, i.e., HTML, CSS, JavaScript, Images, PDF, Video, etc. Using the content-type header the browser then knows how to process the data.
+Content-Type: This tells the client what type of data is being returned, i.e., HTML, CSS, JavaScript, Images, PDF, Video, etc. Using the content-type header the 
+browser then knows how to process the data.
 
 Content-Encoding: What method has been used to compress the data to make it smaller when sending it over the internet.
 
@@ -233,17 +256,23 @@ Host
 
 Task 6  Cookies
 
-You've probably heard of cookies before, they're just a small piece of data that is stored on your computer. Cookies are saved when you receive a "Set-Cookie" header from a web server. Then every further request you make, you'll send the cookie data back to the web server. Because HTTP is stateless (doesn't keep track of your previous requests), cookies can be used to remind the web server who you are, some personal settings for the website or whether you've been to the website before. Let's take a look at this as an example HTTP request:
+You've probably heard of cookies before, they're just a small piece of data that is stored on your computer. Cookies are saved when you receive a "Set-Cookie" header 
+from a web server. Then every further request you make, you'll send the cookie data back to the web server. Because HTTP is stateless (doesn't keep track of your 
+previous requests), cookies can be used to remind the web server who you are, some personal settings for the website or whether you've been to the website before. 
+Let's take a look at this as an example HTTP request:
 
 https://static-labs.tryhackme.cloud/sites/howhttpworks/cookie_flow.png
 
-Cookies can be used for many purposes but are most commonly used for website authentication. The cookie value won't usually be a clear-text string where you can see the password, but a token (unique secret code that isn't easily humanly guessable).
+Cookies can be used for many purposes but are most commonly used for website authentication. The cookie value won't usually be a clear-text string where you can see 
+the password, but a token (unique secret code that isn't easily humanly guessable).
 
 Viewing Your Cookies
 
-You can easily view what cookies your browser is sending to a website by using the developer tools, in your browser. If you're not sure how to get to the developer tools in your browser, click on the "View Site" button at the top of this task for a how-to guide.
+You can easily view what cookies your browser is sending to a website by using the developer tools, in your browser. If you're not sure how to get to the developer 
+tools in your browser, click on the "View Site" button at the top of this task for a how-to guide.
 
-Once you have developer tools open, click on the "Network" tab. This tab will show you a list of all the resources your browser has requested. You can click on each one to receive a detailed breakdown of the request and response. If your browser sent a cookie, you will see these on the "Cookies" tab of the request.
+Once you have developer tools open, click on the "Network" tab. This tab will show you a list of all the resources your browser has requested. You can click on each 
+one to receive a detailed breakdown of the request and response. If your browser sent a cookie, you will see these on the "Cookies" tab of the request.
 
 Answer the questions below
 
